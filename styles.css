@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(20,20,20);
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#orb {
+    background-color: palevioletred;
+    height: 20px;
+    aspect-ratio: 1;
+    position: absolute;
+    opacity: 0;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+}
+
+#smallorb {
+    background-color: white;
+    height: 90%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+}
+
+#bg {
+    background-color: white;
+    height: 450%;
+    aspect-ratio: 1;
+    position: absolute;
+    opacity: 0.8;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(
+        to right,
+        mediumpurple,
+        darkred
+    );
+    
+    animation: appear 6s ease 0s 1, rotate 60s infinite linear;
+    overflow: hidden;
+    filter: blur(8px);
+}
+
+body:hover > #orb {
+    opacity: 1;
+}
